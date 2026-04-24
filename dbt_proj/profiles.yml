@@ -1,0 +1,16 @@
+main_duckdb:
+
+  outputs:
+    dev:
+      type: duckdb
+      path: data/test_meta_db.duckdb
+      extensions:
+        - spatial
+        - httpfs
+        - parquet
+      threads: 2
+      attach:
+        - path: ''
+          type: duckdb
+          alias: external_db
+  target: dev
