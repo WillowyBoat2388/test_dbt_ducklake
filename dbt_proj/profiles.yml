@@ -1,5 +1,6 @@
 main_duckdb:
 
+  target: dev
   outputs:
     dev:
       type: duckdb
@@ -8,9 +9,14 @@ main_duckdb:
         - spatial
         - httpfs
         - parquet
+        - postgres
       threads: 2
-      attach:
-        - path: ''
-          type: duckdb
-          alias: external_db
-  target: dev
+
+    prod:
+      type: postgres
+      host: "{{ env_var('RDS_HOST') }}"
+      user: "{{ env_var('RDS_USER') }}"
+      password: "{{ env_var('RDS_PASSWORD') }}"
+      port: 5432
+      dbname: postgres # or database instead of dbname
+      schema: lakehouse

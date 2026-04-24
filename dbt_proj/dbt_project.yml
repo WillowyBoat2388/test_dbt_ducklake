@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'test_dbt_ducklake'
+name: 'duck_dbt_warehouse_datalake'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
@@ -13,9 +13,9 @@ flags:
 
 
 models:
-  test_dbt_ducklake:
+  duck_dbt_warehouse_datalake:
     transformation:
       schema: main
-    reverse_etl:
-      database: postgres_db
-      schema: public
+    # reverse_etl:
+    #   database: postgres
+    #   schema: public
