@@ -6,5 +6,8 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "dbt-duckdb==1.10.1",
+    "dotenv>=0.9.9",
     "duckdb>=1.5.2",
+    "loguru>=0.7.3",
+    "pandas>=3.0.2",
 ]
