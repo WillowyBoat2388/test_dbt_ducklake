@@ -7,6 +7,7 @@
 .ona/
 
 # ----package-exclusions---
+src/*.egg-info/
 # src/dbt_proj/data/lake
 # src/data/
 # src/*.egg-info
