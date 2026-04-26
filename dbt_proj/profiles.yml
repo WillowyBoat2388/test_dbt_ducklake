@@ -4,19 +4,35 @@ main_duckdb:
   outputs:
     dev:
       type: duckdb
-      path: data/test_meta_db.duckdb
       extensions:
         - spatial
         - httpfs
         - parquet
         - postgres
+        - ducklake
+      settings:
+        s3_region: eu-central-1
+        s3_access_key_id: "{{ env_var('S3_ACCESS_KEY_ID') }}"
+        s3_secret_access_key: "{{ env_var('S3_SECRET_ACCESS_KEY') }}"
       threads: 2
+      attach:
+        - path: "ducklake:data/test_meta_db.duckdb"
+          is_ducklake: true
+          alias: local_lake
+        - path: "ducklake:postgres:dbname=postgres_db"
+          is_ducklake: true       
+          alias: remote_lake
+        - path: "postgresql://{{ env_var('DBT_DUCKDB_PG_USER') }}:{{ env_var('DBT_DUCKDB_PG_PWD') }}@{{ env_var('DBT_DUCKDB_PG_HOST') }}:5432/lakehouse"
+          type: postgres
+          alias: postgres_db
 
-    prod:
-      type: postgres
-      host: "{{ env_var('RDS_HOST') }}"
-      user: "{{ env_var('RDS_USER') }}"
-      password: "{{ env_var('RDS_PASSWORD') }}"
-      port: 5432
-      dbname: postgres # or database instead of dbname
-      schema: lakehouse
+
+
+    # prod:
+    #   type: postgres
+    #   host: "{{ env_var('RDS_HOST') }}"
+    #   user: "{{ env_var('RDS_USER') }}"
+    #   password: "{{ env_var('RDS_PASSWORD') }}"
+    #   port: 5432
+    #   dbname: postgres # or database instead of dbname
+    #   schema: lakehouse

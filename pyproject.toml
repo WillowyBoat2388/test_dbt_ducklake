@@ -11,3 +11,6 @@ dependencies = [
     "loguru>=0.7.3",
     "pandas>=3.0.2",
 ]
+
+[tool.uv]
+package = true
