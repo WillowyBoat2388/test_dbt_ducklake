@@ -1,15 +1,6 @@
-import sys
-import os
 import requests
 import pandas as pd
 from loguru import logger
-# from test_dbt_ducklake.ducklake import setup_ducklake
-
-# Adds the directory one level up to the path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
-
 
 WB_API = "https://api.worldbank.org/v2"
 

@@ -1,5 +1,6 @@
 from loguru import logger
 import duckdb
+from etl.ingestion.worksheet import *
 from etl.setup_ducklake import main as setup_ducklake
 
 
