@@ -16,7 +16,7 @@ def init_db(con: duckdb.DuckDBPyConnection):
 
 def ingest_from_api(path=None):
     """Fetch all sources and load into DuckLake."""
-    from etl.ingestion.ingest import (
+    from etl.ingestion.api_ingest import (
         ingest_wb_countries,
         ingest_doing_business,
         ingest_enterprise_surveys,
