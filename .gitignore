@@ -3,3 +3,10 @@
 *__pycache__/
 
 .vscode/
+
+.ona/
+
+# ----package-exclusions---
+# src/dbt_proj/data/lake
+# src/data/
+# src/*.egg-info
