@@ -1,4 +1,0 @@
-data
-dbt_proj
-etl
-scripts
