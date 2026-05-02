@@ -14,7 +14,7 @@ flags:
 
 models:
   duck_dbt_warehouse_datalake:
-    transformation:
+    transform:
       schema: main
     # reverse_etl:
     #   database: postgres

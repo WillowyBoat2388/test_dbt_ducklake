@@ -2,7 +2,7 @@ import duckdb
 import os
 from loguru import logger
 from dotenv import load_dotenv
-
+logger.add("setup_ducklake.log")
 def main(data_path=None):
     """Create a Ducklake with PostgreSQL metadata and local data storage."""
 
@@ -59,6 +59,11 @@ def main(data_path=None):
                 DATA_PATH '{data_path}', OVERRIDE_DATA_PATH true
             );
         """
+        # attach_ducklake = f"""
+        #     ATTACH 'ducklake:postgres' AS lake (
+        #         DATA_PATH '{data_path}', OVERRIDE_DATA_PATH true
+        #     );
+        # """
 
     conn = duckdb.connect()
 
@@ -80,9 +85,16 @@ def main(data_path=None):
     except NameError:
         pass
     
-    conn.execute(attach_ducklake)
-
-    conn.execute("USE lake;")
+    try: 
+        conn.execute(attach_ducklake)
+    except :
+        pass
+    
+    try: 
+        conn.execute("USE lake;")
+    except :
+        pass
+    
     
     return conn
 

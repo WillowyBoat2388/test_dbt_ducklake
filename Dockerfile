@@ -1,9 +1,9 @@
 FROM python:3.11-slim
 
-WORKDIR .
+WORKDIR src
 
 # copy over python dependencies file
-COPY ./ .
+COPY ./src /src
 
 # install additional tools you might need, e.g.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -11,7 +11,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && uv python install
     
 # add execute permissions to the entrypoint script
-RUN chmod -R 755 /scripts/run_dbt.sh
+RUN chmod -R 755 ./scripts/run_dbt.sh
 
 ENTRYPOINT [ "/bin/sh", "-c"]
-# CMD ["uv run ingestion/import.py"]
+CMD ["scripts/run.sh"]

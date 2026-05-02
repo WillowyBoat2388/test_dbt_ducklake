@@ -8,6 +8,16 @@
 
 # ----package-exclusions---
 src/*.egg-info/
-# src/dbt_proj/data/lake
-# src/data/
-# src/*.egg-info
+src/dbt_proj/data/lake
+src/data/*.duck.*
+src/data/regfyl.ducklake
+
+src/data/*.ducklake.wal
+src/data/*.duckdb.wal
+src/data/test_meta_db.duckdb
+
+
+dbt-mcp.log
+AGENTS.md
+src/etl/ingestion/product_info.py
+src/etl/ingestion/ingest.ipynb
