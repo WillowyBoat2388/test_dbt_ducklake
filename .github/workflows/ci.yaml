@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '**.sql'
+      - '**.py'
       - '**.yaml'
 
   workflow_dispatch:
