@@ -6,7 +6,7 @@ on:
     paths:
       - '**.sql'
 
-  # workflow-dispatch:
+  workflow_dispatch:
 
        
 jobs:
