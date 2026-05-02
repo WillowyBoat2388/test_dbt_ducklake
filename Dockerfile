@@ -9,6 +9,7 @@ COPY ./src /src
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y curl \
     && curl -LsSf https://astral.sh/uv/install.sh | sh \
+    &&  source $HOME/.local/bin/env \
     && uv python install
     
 # add execute permissions to the entrypoint script
