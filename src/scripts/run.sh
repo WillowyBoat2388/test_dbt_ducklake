@@ -6,6 +6,8 @@ echo "Running DUCKLAKE PIPELINE"
 echo "Run all dependencies to collect the required packages before ducklake pipeline execution"
 uv sync
 echo "Dependencies Installed"
+cd src
 
-uv run etl/ingestion/main.py
+
+uv run ./etl/ingestion/main.py
 ./scripts/run_dbt.sh
