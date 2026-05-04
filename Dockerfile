@@ -18,7 +18,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # RUN uv python install
     
 # add execute permissions to the entrypoint script
-RUN chmod -R 755 ./scripts
+RUN chmod -R 755 ./src/scripts
 
 ENTRYPOINT [ "/bin/sh", "-c"]
-CMD ["scripts/run.sh"]
+CMD ["./src/scripts/run.sh"]
