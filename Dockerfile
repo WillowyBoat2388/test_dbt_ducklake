@@ -1,11 +1,11 @@
 FROM python:3.11-slim
 
-WORKDIR /src
+WORKDIR /app
 
 # copy over python dependencies file
-COPY ./src /src
+COPY . /app
 
-COPY pyproject.toml main.py uv.lock .python-version /src/
+
 
 # install additional tools you might need, e.g.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
