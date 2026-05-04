@@ -8,4 +8,4 @@ uv sync
 echo "Dependencies Installed"
 
 uv run etl/ingestion/main.py
-./run_dbt.sh
+./scripts/run_dbt.sh

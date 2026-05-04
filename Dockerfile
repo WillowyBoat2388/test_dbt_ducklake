@@ -5,6 +5,8 @@ WORKDIR /src
 # copy over python dependencies file
 COPY ./src /src
 
+COPY .venv pyproject.toml main.py .env uv.lock .python-version /src/
+
 # install additional tools you might need, e.g.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y curl \
