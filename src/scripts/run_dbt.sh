@@ -3,6 +3,8 @@
 echo "Running DBT commands"
 echo "Run all dependencies to collect the required packages before dbt model execution"
 
+cd src/dbt_proj
+
 uv run dbt deps
 
 # Run dbt
