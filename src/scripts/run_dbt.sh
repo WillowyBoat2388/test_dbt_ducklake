@@ -3,10 +3,10 @@
 echo "Running DBT commands"
 echo "Run all dependencies to collect the required packages before dbt model execution"
 
-dbt deps
+uv run dbt deps
 
 # Run dbt
-dbt run --target dev --profiles-dir .
+uv run dbt run --target dev --profiles-dir .
 RUN_EXIT_CODE=$?
 
 # If run command failed. Exit early
