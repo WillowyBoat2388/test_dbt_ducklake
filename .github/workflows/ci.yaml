@@ -4,10 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - '**.sql'
-      - '**.py'
+      # - '**.sql'
+      # - '**.py'
       - '**.yaml'
-      - 'Dockerfile'
+      # - 'Dockerfile'
 
   workflow_dispatch:
 
