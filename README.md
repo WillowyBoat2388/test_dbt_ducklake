@@ -7,6 +7,9 @@ This repository provides a dbt implementation for DuckLake, the integrated data 
 Traditional lakehouse formats (like Apache Iceberg or Delta Lake) struggle with the "small file problem" and metadata sprawl. DuckLake reimagines the lakehouse by separating metadata management from file storage, using a standard SQL database (PostgreSQL, SQLite, or DuckDB) as the catalog.
 
 Key Benefits
+
+Agentic Analytics: By combining dbt directly with DuckDB over a Ducklake Lakehouse, we're able to enable immediate agentic analytics. This way, we're embedding our semantic inference directly inside our lakehouse, and providing our agents direct access to the data. While we build out the data layer in parallel.
+
 Real-Time Streaming Ingestion: Features Data Inlining, which stores small updates and deletes directly in the catalog database rather than writing thousands of tiny Parquet files. This results in up to 105x faster ingestion than traditional formats.
 
 Sub-Second Analytics: By avoiding "metadata sprawl" and the overhead of scanning thousands of JSON/Avro manifest files, query performance can be up to 900x faster for streaming workloads.

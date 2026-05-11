@@ -3,8 +3,8 @@
 echo "Running DBT commands"
 echo "Run all dependencies to collect the required packages before dbt model execution"
 
-cd src/dbt_proj
-
+cd dbt_proj
+echo "S3_KEY is ${S3_KEY:+set}"
 uv run dbt deps
 
 # Run dbt
@@ -19,4 +19,4 @@ fi
 
 # exit with the test exit code
 echo "dbt run complete"
-exit $TEST_EXIT_CODE
+exit $RUN_EXIT_CODE

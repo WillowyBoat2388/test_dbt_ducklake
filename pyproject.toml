@@ -1,11 +1,11 @@
 [project]
 name = "test-dbt-ducklake"
 version = "0.1.0"
-description = "Add your description here"
+description = "Ducklake DBT Agentic Lakehouse V1 POC"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
-    "dbt>=1.0.0.40.16",
+    "dbt-core>=1.11.8",
     "dbt-duckdb==1.10.1",
     "dotenv>=0.9.9",
     "duckdb>=1.5.2",

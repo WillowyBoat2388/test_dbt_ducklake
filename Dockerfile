@@ -15,7 +15,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && uv python install
     
     
-# RUN uv python install
     
 # add execute permissions to the entrypoint script
 RUN chmod -R 755 ./src/scripts
