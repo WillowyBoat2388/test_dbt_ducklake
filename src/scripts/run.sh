@@ -1,15 +1,18 @@
 #!/bin/bash
 
 
+echo "RUNNING DUCKLAKE PIPELINE"
+echo "BUILD PACKAGE & SYNC CURRENT DISTRIBUTION DEPENDENCIES"
 
-echo "Running DUCKLAKE PIPELINE"
-echo "Run all dependencies to collect the required packages before ducklake pipeline execution"
-uv build
 uv sync
-echo "Dependencies Installed"
+echo "DEPENDENCIES RESOLVED"
 
 cd ./src
-echo "Changed directory to src"
+echo "CURRENT WORKING DIR: PROJECT SOURCE"
 
 uv run etl/ingestion/main.py
+echo "DATA PIPELINE REFRESHED"
+
+echo "BEGIN DBT RUN"
+
 scripts/run_dbt.sh

@@ -1,0 +1,27 @@
+services:
+  # cube:
+  #   image: cubejs/cube:latest
+  #   ports:
+  #     - 4000:4000
+  #     - 15432:15432
+  #   environment:
+  #     - CUBEJS_DEV_MODE=true
+  #   volumes:
+  #     - .:/cube/conf
+
+  etl_pipeline:
+    build: 
+      context: .
+      dockerfile: Dockerfile.etl
+    image: lakehouse:v1
+    env_file:
+      - .env
+    volumes:
+      - ./src/dbt_inference:/app/src/dbt_inference
+      - ./src/data:/app/src/data
+ 
+
+
+
+
+

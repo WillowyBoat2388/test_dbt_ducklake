@@ -3,12 +3,11 @@
 echo "Running DBT commands"
 echo "Run all dependencies to collect the required packages before dbt model execution"
 
-cd dbt_proj
 echo "S3_KEY is ${S3_KEY:+set}"
-uv run dbt deps
+uv run dbt deps --project-dir dbt_inference --profiles-dir dbt_inference
 
 # Run dbt
-uv run dbt run --target dev --profiles-dir .
+uv run dbt run --target dev --project-dir dbt_inference --profiles-dir dbt_inference
 RUN_EXIT_CODE=$?
 
 # If run command failed. Exit early
