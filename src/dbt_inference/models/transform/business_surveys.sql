@@ -1,6 +1,6 @@
 
 
-select * from {{ ref('raw_enterprise_surveys') }}
+select * from remote_lake.raw_enterprise_surveys
 
 
 

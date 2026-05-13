@@ -24,6 +24,7 @@ snapshot-paths: ["snapshots"]
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
+  - "logs"
 
 
 
@@ -32,6 +33,7 @@ models:
     transform:
       +database: remote_lake
       +schema: main
+      +materialized: table
     # reverse_etl:
     #   database: postgres
     #   +schema: public
