@@ -52,7 +52,7 @@ def main(data_path=None):
             port = os.getenv('RDS_PORT', '5432')
             user = os.getenv('RDS_USER')
             password = os.getenv('RDS_PASSWORD')
-            db = os.getenv('RDS_DB', 'postgres')
+            db = os.getenv('RDS_DB', 'duckdb')
             postgres_secret = f"""
                 CREATE SECRET (
                     TYPE postgres,

@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: lakehouse
+    database: lake
+    schema: main
+    tables:
+      - name: raw_enterprise_surveys
+      - name: raw_governance_indicators
